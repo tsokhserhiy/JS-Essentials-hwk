@@ -5,14 +5,14 @@ start();
 function start () {
   var question = confirm("Do you want to play the game?");
   if (question) {
-    startGame();
+    firstGame();
   } else {
     console.log("Today you will not win the jackpot, but you could");
 
   }
 }
 
-function startGame() {
+function firstGame() {
   var number = Math.round(Math.random() * 5);
   console.log(number);
   debugger;
@@ -33,7 +33,12 @@ function startGame() {
      }
   }
   console.log("Your win : " + sum + "$");
-  count();
+  if (i == 4) {
+    firstGame();
+  } else {
+    count();
+  }
+
 }
 
 function count() {
