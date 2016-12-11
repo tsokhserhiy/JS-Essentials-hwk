@@ -15,7 +15,7 @@ function start () {
 function firstGame() {
   var number = Math.round(Math.random() * 5);
   console.log(number);
-  debugger;
+  //debugger;
   for (var i = 1; i < 4; i++) {
     var userNumber = prompt("Please, enter number:");
     if (userNumber == number) {
@@ -58,11 +58,11 @@ function nextGame() {
     var userNumber = prompt("Please, enter number:");
     if (userNumber == number) {
        if (u == 1) {
-         newsum = 10 * 3 + sum;
+         sum = 10 * 3 + sum;
        } else if (u == 2) {
-         newsum = 5 * 3 + sum;
+         sum = 5 * 3 + sum;
        } else if (u == 3) {
-         newsum = 2 * 3 + sum;
+         sum = 2 * 3 + sum;
        }
        break;
      } else {
@@ -70,6 +70,6 @@ function nextGame() {
        continue;
      }
   }
-  console.log("Your win : " + newsum + "$");
-  return newsum;
+  console.log("Your win : " + sum + "$");
+  count();
 }
