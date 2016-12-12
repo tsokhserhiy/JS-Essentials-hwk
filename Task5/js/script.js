@@ -27,8 +27,11 @@ console.log(typeof c(4,5));
 
 //-------------------------------------4-------------------------------------
 //d(1) => {a:1}, d(123) => {a:123}, typeof d() => object
-function d(a){
-  return {a:a};
+function d(x){
+  var obj = {
+    a:x
+  };
+  return obj;
 }
 
 console.log(d(123));
@@ -37,11 +40,13 @@ console.log(typeof d(123));
 //-------------------------------------5-------------------------------------
 //e(55)() => 55, e(123)() => 123, typeof e() => function
 function e(a){
-  return a;
+  return function () {
+    return a
+  };
 }
 
 console.log(e(55));
-console.log(typeof e);
+console.log(typeof e());
 
 //-------------------------------------6-------------------------------------
 //f(1,3) => [1,1,1], f('x',5) => ['x','x','x','x','x'], f(-1,2) => [-1,-1], typeof f() => object (array)
@@ -99,7 +104,7 @@ console.log(typeof k());
 //m([1,2,3],[55,12,33]) => [56,14,36], m([2,3],[5,-1]) => [7,2], typeof m() => object (array)
 function m(array1 = [], array2 = []){
 	var sum = [];
-	for (var i = 0; i<array1.length; i++){
+	for (var i = 0; i < array1.length; i++){
 		sum[i] = array1[i] + array2[i];
 	}
 	return sum;

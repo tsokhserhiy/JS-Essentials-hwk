@@ -34,7 +34,10 @@ function firstGame() {
   }
   console.log("Your win : " + sum + "$");
   if (i == 4) {
-    firstGame();
+    var question = confirm("Do you want to play one more time?");
+    if (question) {
+      firstGame();
+    }
   } else {
     count();
   }
@@ -42,7 +45,7 @@ function firstGame() {
 }
 
 function count() {
-  var question2 = confirm("Do you want to play one more time?");
+  var question2 = confirm("Do you want to play game again?");
   if (question2) {
     nextGame();
   } else {
