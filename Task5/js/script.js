@@ -88,7 +88,7 @@ console.log(typeof h(function(){return 5}));
 //-------------------------------------9---------------------------------------
 //j([1,2,3]) => 6, j([12,34,56]) => 102, typeof j() => number
 function j(array = []) {
-  var sum = [];
+  var sum = 0;
   for (var i = 0; i < array.length; i++){
     sum += array[i];
   }
